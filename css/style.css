@@ -1,0 +1,123 @@
+@charset "UTF-8";
+article, aside, blockquote, body, button, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header,input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+html{
+    overflow-scrolling: touch;
+    background-color:#f7ecb5;
+    margin: 0 auto;
+    height: 100%;
+}
+
+#title {
+    margin: 0 auto;
+    display: table;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+#scoreShow{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: .5em;
+}
+#scoreShow:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#scoreContent{
+    width:8.6rem;
+    height: .6em;
+    margin: 0 auto;
+}
+
+#scoreCanvas{
+    border: .05rem solid #222;
+    width: 6rem;
+    height: .55rem;
+    float: left;
+}
+
+#scoreShow p{
+    float: left;
+    font-size: .5rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}
+
+#chessContent{
+}
+
+#promptShow{
+    margin-top: 1rem;
+    display: none;
+    margin: 0 auto;
+    height: 8rem;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    animation: promptshows 2s linear;
+    overflow: hidden;
+}
+
+@keyframes promptshows {
+    0%{  opacity: 0; transform: scale(1);}
+    12.5%{  opacity: 0.25; transform: scale(1.1);}
+    25%{  opacity: 0.5; transform: scale(1.2)}
+    32.5%{  opacity: 1; transform: scale(1.3)}
+    50%{  opacity: 1; transform: scale(1.4)}
+    62.5%{  opacity: 1; transform: scale(1.3)}
+    75%{  opacity: 0.5; transform: scale(1.2)}
+    87.5%{  opacity: 0.25; transform: scale(1.1)}
+    100%{  opacity: 0; transform: scale(1);}
+}
+
+#promptRounds{
+    line-height: 8rem;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+#promptClick{
+    display: none;
+    vertical-align: middle;
+    width: 3rem;
+    height: .6rem;
+    margin: 0 auto;
+    margin-top: -3rem;
+    font-size: .4rem;
+    color: #dddddd;
+    border: 1px solid #000000;
+    background-color:#000000 ;
+    border-radius: .05rem;
+}
+
+#chess{
+    display: table;
+	margin: 0 auto;
+    margin-top: 1rem;
+    width: 8rem;
+    height: 8rem;
+    -webkit-box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
+    -moz-box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
+    box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
+}
+
+#address{
+    display: table;
+	color: #888;
+	font-size: .3rem;
+	margin: .7em auto;
+    text-decoration: none;
+}
+#address:hover{
+    color: #222;
+}
+
+
+
+
