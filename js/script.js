@@ -4,7 +4,7 @@ var wins = [];//所有赢法的数组
 var myWin = [];//我可能赢的数组
 var computerWin = [];//电脑赢的数组
 var isOver = false;
-var userScore=0;//统计玩家的分数
+var userScore=6;//统计玩家的分数
 var computerScore=0;
 var u1=0,v1=0;
 var count = 0;
@@ -12,12 +12,19 @@ var count = 0;
 var prompt=document.getElementById("promptShow");
 var promptRounds=document.getElementById("promptRounds");
 var promptClick=document.getElementById("promptClick");
+
+var onMusic=document.getElementById('chessMusic');
+var failMusic=document.getElementById('failMusic');
+var winMusic=document.getElementById('winMusic');
+
+
 //页面加载时绘制背景
 
 window.onload = function() {
     drawBackground();
     drawScore();
-}
+
+};
 
 //统计赢法数组
 
@@ -131,6 +138,10 @@ function drawBackground() {
 //下棋子时触发绘制棋子函数
 
 function onballDrew(i, j, isUser) {
+
+    //出发音效
+    onMusic.play();
+
 	//绘制小球
 	var gradient1 = ballContext.createRadialGradient(50 + i * 50 - 5, 50 + j * 50 - 5, 12, 50 + i * 50, 50 + j * 50, 2);
 	if(isUser) {
@@ -146,7 +157,9 @@ function onballDrew(i, j, isUser) {
 	ballContext.closePath();
 	ballContext.fillStyle = gradient1;
 	ballContext.fill();
+
 }
+
 
 //用戶點擊事件
 chessCanvas.onclick = function(e) {
@@ -226,7 +239,7 @@ chessCanvas.onclick = function(e) {
 		}
 	}
   
-}
+};
 
 var computerAI = function() {
 	var myScore = [];
@@ -356,46 +369,49 @@ var onComputerChess=function(u,v){
 	
 	u1=u;
 	v1=v;
-}
+};
 
 var drawScoreCanvas=function(){
 	scoreContext.clearRect(0,0,600,60);
 	scoreContext.beginPath();
 	scoreContext.fillRect(0+computerScore*60,0,600-userScore*60-computerScore*60,60);
 	scoreContext.closePath();
-}
+};
 
 var GameoverAll=function(win){
     if(win){
         prompt.style.display="block";
         promptRounds.innerHTML="你竟然击败了电脑";
         promptClick.style.display="block";
+        winMusic.play();
         promptClick.onclick=function(){
             prompt.style.display="none";
             GameOver();
             userScore=0;
             computerScore=0;
-        }
+
+        };
+
     }else {
         prompt.style.display="block";
         promptRounds.innerHTML = "你被电脑击败了";
         promptClick.style.display = "block";
+        failMusic.play();
         promptClick.onclick = function () {
             prompt.style.display = "none";
             GameOver();
             userScore=0;
             computerScore=0;
-        }
+        };
     }
 
 	scoreContext.beginPath();
 	scoreContext.fillRect(0,0,600,60);
 	scoreContext.closePath();
-}
+};
 
 function promptShow(){
     if(computerScore>5||userScore>5){
-        console.log("okok");
         return;
     }
     //设置每局完成时的显示
@@ -406,4 +422,5 @@ function promptShow(){
             prompt.style.display="none";
     },1900);
 }
+
 
