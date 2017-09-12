@@ -49,6 +49,7 @@ html{
 }
 
 #chessContent{
+    position: relative;
 }
 
 #promptShow{
@@ -127,6 +128,14 @@ html{
     -webkit-box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
        -moz-box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
             box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
+}
+#chessBall{
+    display: block;
+    height: 8rem;
+    position: absolute;
+    float: left;
+    left: 50%;
+    margin-left:-4rem;
 }
 
 #address{
