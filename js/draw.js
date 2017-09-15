@@ -1,7 +1,7 @@
 
 
 
-define(function () {
+define(['script'],function (script) {
 
     var chessCanvas = document.getElementById("chess");
     var bgContext = chessCanvas.getContext("2d");//绘制背景和网格线
@@ -28,13 +28,9 @@ define(function () {
 
     //绘制棋盘背景
     function drawBackground() {
-        var background = new Image();
-        background .src = "img/14.jpg";
-        background.onload=function(){
-            document.getElementById('loading').style.display='none';
-            document.getElementById('gamePage').style.display='block';
-        };
-        bgContext.drawImage(background, 0, 0, 800, 800);
+
+
+        bgContext.drawImage(script.back, 0, 0, 800, 800);
         //绘制网格线
         for(var i = 0; i < 15; i++) {
             //画横线
@@ -107,7 +103,6 @@ define(function () {
         ballContext:ballContext,
         scoreCnavas:scoreCanvas,
         scoreContext:scoreContext
-
     }
 
 });

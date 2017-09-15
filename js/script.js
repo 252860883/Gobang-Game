@@ -19,11 +19,8 @@ require(['win', 'draw'], function (win, draw) {
     var myWin = win.myWin;
     var computerWin = win.computerWin;
     count = win.count;
-
-    window.onload = function () {
-        draw.drawBackground();
-        draw.drawScore(userScore, computerScore);
-    };
+    draw.drawBackground();
+    draw.drawScore(userScore, computerScore);
 
     //用戶點擊事件
     draw.ballCanvas.onclick = function (e) {
@@ -253,6 +250,19 @@ require(['win', 'draw'], function (win, draw) {
     }
 
 });
+
+define(
+    function () {
+         var background=new Image();
+         background .src = "img/14.jpg";
+         background.onload=function(){
+            document.getElementById('loading').style.display='none';
+            document.getElementById('gamePage').style.display='block';
+
+         };
+         return {back:background}
+    }
+);
 
 
 
