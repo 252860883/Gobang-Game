@@ -8,28 +8,40 @@
         <link rel="stylesheet" type="text/css" href="css/rem.css"/>
 	</head>
 <body>
-    <div id="title">
-        <h2>五子棋大战</h2>
-    </div>
-    <div id="scoreShow">
+        <div id="loading">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+    <div id="gamePage">
+        <div id="title">
+            <h2>五子棋大战</h2>
+        </div>
+        <div id="scoreShow">
             <div id="scoreContent">
                 <p>玩家</p>
-                    <canvas id="scoreCanvas" width="600" height="50"></canvas>
+                <canvas id="scoreCanvas" width="600" height="50"></canvas>
                 <p>電腦</p>
             </div>
-    </div>
-    <div class="chessContent">
-        <div id="promptShow">
-            <h4 id="promptRounds">ROUND 1</h4>
-            <button id="promptClick">点击 再来一轮</button>
         </div>
-        <canvas id="chessBall" width="800" height="800"></canvas>
-        <canvas id="chess" width="800" height="800"></canvas>
+        <div class="chessContent">
+            <div id="promptShow">
+                <h4 id="promptRounds">ROUND 1</h4>
+                <button id="promptClick">点击 再来一轮</button>
+            </div>
+            <canvas id="chessBall" width="800" height="800"></canvas>
+            <canvas id="chess" width="800" height="800"></canvas>
 
 
-    </div>
-    <div class="foot">
-        <a id="address" href="https://github.com/252860883">@一只恐龙m</a>
+        </div>
+        <div class="foot">
+            <a id="address" href="https://github.com/252860883">@一只恐龙m</a>
+        </div>
     </div>
 
     <audio id="chessMusic"  src="music/chessDown.mp3"></audio>
@@ -37,5 +49,6 @@
     <audio id="winMusic"  src="music/win.wav"></audio>
 
 </body>
-    <script src="js/script.js"></script>
+    <script src="js/require.js" async="async"></script>
+    <script src="js/require.js" data-main="js/script"></script>
 </html>

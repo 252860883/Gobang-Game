@@ -12,15 +12,91 @@ html{
     background: #f9f2f4;
 }
 
+#loading{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1rem;
+    margin-top: -2rem;
+    animation: loading 2s ease-in-out infinite;
+    -webit-animation: loading 2s ease-in-out infinite;
+    -moz-animation: loading 2s ease-in-out infinite;
+}
+
+#loading i{
+    width: .5rem;
+    height: .5rem;
+    display: block;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*background: #444;*/
+    background: radial-gradient(at .25rem .25rem,#444,#000);
+    background: -webkit-radial-gradient(.2rem .2rem,#444,#000);
+}
+#loading i:nth-child(1){
+     position: absolute;
+     top: 0;
+     left: 1rem;
+ }
+#loading i:nth-child(2){
+    position: absolute;
+    top: 0.3rem;
+    left: 1.7rem;
+}
+#loading i:nth-child(3){
+    position: absolute;
+    top: 1em;
+    left: 2rem;
+}
+#loading i:nth-child(4){
+    position: absolute;
+    top: 1.7rem;
+    left: 1.7rem;
+}
+#loading i:nth-child(5){
+    position: absolute;
+    top: 2em;
+    left: 1rem;
+}
+#loading i:nth-child(6){
+    position: absolute;
+    top: 1.7rem;
+    left: 0.3rem;
+}
+#loading i:nth-child(7){
+    position: absolute;
+    top: 1em;
+    left: 0;
+}
+#loading i:nth-child(8){
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+
+}
+
+@keyframes loading {
+    50%{transform: rotate(180deg)}
+    100%{transform: rotate(360deg)}
+}
+
+
+#gamePage{
+    display: none;
+}
+
 #title {
-    margin: 1em  auto 0 auto;
+    margin: 1rem  auto 0 auto;
     display: table;
     overflow: hidden;
 }
 
 #scoreShow{
     width: 100%;
-    margin: .5em  auto 0 auto;
+    margin: .5rem  auto 0 auto;
 }
 #scoreShow:after{
     content: "";
@@ -30,7 +106,7 @@ html{
 
 #scoreContent{
     width:8.6rem;
-    height: .6em;
+    height: .6rem;
     margin: 0 auto;
 }
 
@@ -73,35 +149,17 @@ html{
 
 @keyframes promptshows {
     0%{  opacity: 0; transform: scale(1);}
-    12.5%{  opacity: 0.25; transform: scale(1.1);}
-    25%{  opacity: 0.5; transform: scale(1.2)}
-    32.5%{  opacity: 1; transform: scale(1.3)}
     50%{  opacity: 1; transform: scale(1.4)}
-    62.5%{  opacity: 1; transform: scale(1.3)}
-    75%{  opacity: 0.5; transform: scale(1.2)}
-    87.5%{  opacity: 0.25; transform: scale(1.1)}
     100%{  opacity: 0; transform: scale(1);}
 }
 @-webkit-keyframes promptshows {
     0%{  opacity: 0; transform: scale(1);}
-    12.5%{  opacity: 0.25; transform: scale(1.1);}
-    25%{  opacity: 0.5; transform: scale(1.2)}
-    32.5%{  opacity: 1; transform: scale(1.3)}
     50%{  opacity: 1; transform: scale(1.4)}
-    62.5%{  opacity: 1; transform: scale(1.3)}
-    75%{  opacity: 0.5; transform: scale(1.2)}
-    87.5%{  opacity: 0.25; transform: scale(1.1)}
     100%{  opacity: 0; transform: scale(1);}
 }
 @-moz-keyframes promptshows {
      0%{  opacity: 0; transform: scale(1);}
-     12.5%{  opacity: 0.25; transform: scale(1.1);}
-     25%{  opacity: 0.5; transform: scale(1.2)}
-     32.5%{  opacity: 1; transform: scale(1.3)}
      50%{  opacity: 1; transform: scale(1.4)}
-     62.5%{  opacity: 1; transform: scale(1.3)}
-     75%{  opacity: 0.5; transform: scale(1.2)}
-     87.5%{  opacity: 0.25; transform: scale(1.1)}
      100%{  opacity: 0; transform: scale(1);}
  }
 
@@ -110,10 +168,10 @@ html{
     vertical-align: middle;
     width: 3rem;
     height: .6rem;
-    margin: -8em  auto 0 auto;
+    margin: -3rem  auto 0 auto;
     font-size: .4rem;
     color: #dddddd;
-    border: 1px solid #000000;
+    border: 2px solid #333;
     background-color:#000000 ;
     -webkit-border-radius: .05rem;
        -moz-border-radius: .05rem;
@@ -122,7 +180,7 @@ html{
 
 #chess{
     display: table;
-    margin: 1em  auto 0 auto;
+    margin: 1rem  auto 0 auto;
     width: 8rem;
     height: 8rem;
     -webkit-box-shadow: -.02rem -.02rem .02rem #ccc, .04rem .04rem .04rem #aaa;
@@ -142,7 +200,7 @@ html{
     display: table;
 	color: #888;
 	font-size: .3rem;
-	margin: .7em auto;
+	margin: .7rem auto;
     text-decoration: none;
 }
 #address:hover{
